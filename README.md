@@ -4,23 +4,17 @@ Este é um teste desenvolvido para a oportunidade de desenvolvedor backend na Vy
 
 ## Installation
 
-Necessário instalar dependências e baixar as imagens docker do Mysql e do Mongodb. Todo os comandos estão na sessão de <a href="https://github.com/CaioAbdonAlves/vylex-test?tab=readme-ov-file#running-the-app">Running the app</a>
+Não é necessário instalar nada, pois a aplicação completa está rodando em containers docker. Tanto a api, quanto o mysql e o mongodb.
 
 Atenção: É necessário um arquivo .env para funcionar, existe um arquivo chamado .env.example mas fornecerei o .env para ser colado na aplicação em particular.
 
 ## Running the app
 
-Para rodar a aplicação, é necessário instalar as dependências do projeto, subir os containers docker e por fim iniciar a aplicação.
+Para rodar a aplicação, é necessário apenas subir o container com o docker-compose no diretório da aplicação, pois todo o código necessário de migrations está dentro do entrypoint:
 
 ```bash
-# instalando dependências
-$ npm install
-
-# iniciando containers do Mysql e do Mongodb
-$ docker-compose up -d
-
 # iniciando a aplicação
-$ npm run start:dev
+$ docker-compose up --build
 
 ```
 
