@@ -18,6 +18,18 @@ services:
     volumes:
       - mongodb-custom-data:/data/mongodb-data
 
+  app:
+    build: .
+    environment:
+      DATABASE_URL: mysql://root:root@mysql:3306/user_service
+      MONGODB_URL: mongodb://mongodb-vylex:27017/nest
+    #volumes:
+    #  - .:/app
+    depends_on:
+      - mysql
+    ports:
+      - "3000:3000"
+
 volumes:
   mysql-data:
     driver: local
